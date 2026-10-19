@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<title>TaskFlow Android — Wireframes e Fluxo de Navegação (UC00609)</title>
+<style>
+  body { font-family: 'Segoe UI', Calibri, Arial, sans-serif; max-width: 1100px; margin: 0 auto; padding: 30px 20px; color: #222; background: #fafafa; line-height: 1.5; }
+  h1 { color: #333; font-size: 24px; border-bottom: 3px solid #555; padding-bottom: 8px; margin-top: 0; }
+  h2 { color: #333; font-size: 19px; margin-top: 34px; border-bottom: 1px solid #ccc; padding-bottom: 4px; }
+  .meta { background: #f5f5f5; border-left: 4px solid #777; padding: 10px 14px; margin: 14px 0; font-size: 13.5px; }
+  .nota { background: #f5f5f5; border-left: 4px solid #aaa; padding: 10px 14px; margin: 14px 0; font-size: 13.5px; }
+
+  /* grelha de telemóveis */
+  .grid { display: flex; flex-wrap: wrap; gap: 28px; justify-content: center; }
+  .item { width: 270px; text-align: center; }
+  .item .legenda { margin-top: 10px; font-size: 13px; }
+  .item .legenda b { color: #333; }
+  .item .legenda span { color: #666; display: block; font-size: 12px; }
+
+  /* telemóvel */
+  .phone { width: 260px; height: 520px; background: #fff; border: 3px solid #333; border-radius: 24px; margin: 0 auto; overflow: hidden; display: flex; flex-direction: column; box-shadow: 3px 6px 14px rgba(0,0,0,.15); }
+  .statusbar { height: 20px; background: #eee; display: flex; justify-content: space-between; align-items: center; font-size: 9px; color: #555; padding: 0 10px; }
+  .appbar { height: 40px; background: #4a4a4a; color: #fff; display: flex; align-items: center; padding: 0 12px; font-size: 13px; font-weight: 600; gap: 8px; }
+  .appbar .back { font-size: 15px; }
+  .appbar .menu { margin-left: auto; font-size: 14px; letter-spacing: 1px; }
+  .content { flex: 1; padding: 12px; display: flex; flex-direction: column; gap: 8px; background: #f5f3fa; position: relative; }
+
+  /* widgets wireframe */
+  .logo { width: 56px; height: 56px; border-radius: 14px; background: #666; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 18px; margin: 18px auto 4px; }
+  .titulo { text-align: center; font-weight: bold; color: #333; font-size: 15px; }
+  .field { background: #fff; border: 1px solid #bbb; border-radius: 6px; padding: 8px 10px; font-size: 11px; color: #888; }
+  .btn { background: #555; color: #fff; border-radius: 6px; padding: 9px; text-align: center; font-size: 12px; font-weight: 600; }
+  .btn.sec { background: #fff; color: #555; border: 1px solid #555; }
+  .link { text-align: center; font-size: 11px; color: #555; text-decoration: underline; }
+  .card { background: #fff; border: 1px solid #ccc; border-left: 4px solid #888; border-radius: 8px; padding: 8px 10px; font-size: 11px; color: #444; box-shadow: 1px 1px 3px rgba(0,0,0,.07); }
+  .card b { font-size: 12px; color: #222; display: block; }
+  .sub { color: #888; font-size: 10px; }
+  .barra { height: 6px; background: #ddd; border-radius: 3px; overflow: hidden; margin-top: 5px; }
+  .barra i { display: block; height: 100%; background: #888; }
+  .fab { position: absolute; right: 12px; bottom: 12px; width: 44px; height: 44px; border-radius: 50%; background: #777; color: #fff; font-size: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 8px rgba(0,0,0,.3); }
+  .cols { display: flex; gap: 6px; flex: 1; }
+  .col { flex: 1; background: #efefef; border-radius: 6px; padding: 5px; display: flex; flex-direction: column; gap: 5px; }
+  .col h5 { margin: 0 0 2px; font-size: 9.5px; color: #555; text-align: center; text-transform: uppercase; letter-spacing: .4px; }
+  .mini { background: #fff; border: 1px solid #bbb; border-top: 3px solid #888; border-radius: 5px; padding: 5px 6px; font-size: 9.5px; color: #444; }
+  .mini .sub { font-size: 8.5px; }
+  .verde { border-top-color: #666; } .laranja { border-top-color: #999; }
+  .check { display: flex; align-items: center; gap: 7px; background: #fff; border: 1px solid #ccc; border-radius: 6px; padding: 6px 9px; font-size: 11px; color: #444; }
+  .box { width: 13px; height: 13px; border: 1.5px solid #888; border-radius: 3px; flex-shrink: 0; }
+  .box.ok { background: #555; border-color: #555; position: relative; }
+  .box.ok::after { content: "✓"; color: #fff; font-size: 10px; position: absolute; top: -2px; left: 1.5px; }
+  .avatar { width: 30px; height: 30px; border-radius: 50%; background: #aaa; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: bold; flex-shrink: 0; }
+  .linha { display: flex; align-items: center; gap: 8px; background: #fff; border: 1px solid #ccc; border-radius: 8px; padding: 7px 9px; font-size: 11px; color: #444; }
+  .linha b { display: block; font-size: 11.5px; color: #222; }
+  .stat { flex: 1; background: #fff; border: 1px solid #ccc; border-radius: 8px; padding: 8px; text-align: center; }
+  .stat b { display: block; font-size: 17px; color: #333; }
+  .stat span { font-size: 9.5px; color: #777; text-transform: uppercase; }
+  .hbar { background: #fff; border: 1px solid #ccc; border-radius: 6px; padding: 6px 9px; font-size: 10.5px; color: #555; }
+  .hbar .barra { margin-top: 4px; }
+  .dialog { position: absolute; inset: 0; background: rgba(0,0,0,.35); display: flex; align-items: center; justify-content: center; }
+  .dialog .box2 { width: 82%; background: #fff; border-radius: 10px; padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+  .dialog .box2 b { font-size: 12.5px; }
+
+  /* diagrama de fluxo */
+  .fluxo { background: #fff; border: 1px solid #ddd; border-radius: 12px; padding: 10px; }
+  .legenda-fluxo { display: flex; gap: 22px; margin-top: 8px; font-size: 13px; color: #555; flex-wrap: wrap; }
+  .legenda-fluxo b { color: #333; }
+  @media print { body { background: #fff; padding: 0; } .grid { gap: 18px; } h2 { page-break-after: avoid; } .item { page-break-inside: avoid; } }
+</style>
+</head>
+<body>
+
+<h1>TaskFlow Android — Wireframes e Fluxo de Navegação</h1>
+<div class="meta">
+  <strong>UC00609 — Desenvolver aplicações móveis (plataforma Android)</strong> · Entregável 3 de 3<br>
+  <strong>Autor:</strong> Bruno Miguel Marques de Castro<br>
+  8 ecrãs da app TaskFlow (Kotlin + XML, Material Design) e o fluxo de navegação entre ecrãs (Fragments).
+</div>
+
+<h2>1 · Fluxo de navegação</h2>
+<div class="nota"><strong>Como ler:</strong> cada caixa é um <b>ecrã</b> (Fragment). As setas são <b>navegação</b> (Jetpack Navigation): seta para um lado = navegação para a frente; seta dupla (ponta nos dois lados) = abrir e voltar (guardar/cancelar). Em qualquer ecrã, o <b>botão ← do sistema</b> volta ao ecrã anterior. O arranque da app depende da sessão: com sessão ativa abre direto em <b>Projetos</b>.</div>
+<div class="fluxo">
+<svg viewBox="0 0 940 390" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="seta" markerWidth="11" markerHeight="9" refX="9" refY="4.5" orient="auto">
+      <path d="M0,0 L10,4.5 L0,9 z" fill="#555"/>
+    </marker>
+    <marker id="setar" markerWidth="11" markerHeight="9" refX="1" refY="4.5" orient="auto">
+      <path d="M10,0 L0,4.5 L10,9 z" fill="#555"/>
+    </marker>
+  </defs>
+  <style>
+    .n { fill: #4a4a4a; rx: 10; }
+    .n2 { fill: #808080; }
+    .t { fill: #fff; font: 600 13px 'Segoe UI', sans-serif; text-anchor: middle; }
+    .st { fill: #fff; font: 10.5px 'Segoe UI', sans-serif; text-anchor: middle; opacity: .85; }
+    .a { stroke: #555; stroke-width: 2; fill: none; }
+    .lbl { fill: #555; font: 10.5px 'Segoe UI', sans-serif; text-anchor: middle; }
+  </style>
+
+  <!-- Registo -->
+  <rect class="n n2" x="40" y="60" width="130" height="56" rx="10"/>
+  <text class="t" x="105" y="85">Registo</text>
+  <text class="st" x="105" y="103">criar conta</text>
+
+  <!-- Login -->
+  <rect class="n" x="40" y="195" width="130" height="56" rx="10"/>
+  <text class="t" x="105" y="220">Login</text>
+  <text class="st" x="105" y="238">entrada da app</text>
+
+  <!-- Registo <-> Login -->
+  <line class="a" x1="105" y1="120" x2="105" y2="191" marker-start="url(#setar)" marker-end="url(#seta)"/>
+  <text class="lbl" x="115" y="158" text-anchor="start">criar conta / voltar</text>
+
+  <!-- Login -> Projetos -->
+  <line class="a" x1="172" y1="223" x2="266" y2="223" marker-end="url(#seta)"/>
+  <text class="lbl" x="219" y="212">login ok</text>
+
+  <!-- Novo Projeto (dialog) -->
+  <rect class="n n2" x="277" y="60" width="130" height="50" rx="10"/>
+  <text class="t" x="342" y="83">Novo Projeto</text>
+  <text class="st" x="342" y="99">dialog · FAB +</text>
+
+  <!-- Projetos -->
+  <rect class="n" x="270" y="195" width="145" height="56" rx="10"/>
+  <text class="t" x="342" y="220">Projetos</text>
+  <text class="st" x="342" y="238">lista · home da app</text>
+
+  <!-- Projetos <-> Novo Projeto -->
+  <line class="a" x1="342" y1="114" x2="342" y2="191" marker-start="url(#setar)" marker-end="url(#seta)"/>
+  <text class="lbl" x="352" y="156" text-anchor="start">abrir / gravar</text>
+
+  <!-- Projetos -> Board -->
+  <line class="a" x1="417" y1="223" x2="486" y2="223" marker-end="url(#seta)"/>
+  <text class="lbl" x="452" y="212">abrir projeto</text>
+
+  <!-- Board -->
+  <rect class="n" x="490" y="195" width="130" height="56" rx="10"/>
+  <text class="t" x="555" y="220">Board</text>
+  <text class="st" x="555" y="238">3 colunas · cartões</text>
+
+  <!-- Peitoril: tronco comum do Board -->
+  <polyline class="a" points="622,223 670,223"/>
+  <line class="a" x1="670" y1="65" x2="670" y2="329"/>
+
+  <!-- Ramificações (duplas: abrir e voltar) -->
+  <line class="a" x1="670" y1="65" x2="716" y2="65" marker-start="url(#setar)" marker-end="url(#seta)"/>
+  <text class="lbl" x="693" y="54">FAB +</text>
+
+  <line class="a" x1="670" y1="153" x2="716" y2="153" marker-start="url(#setar)" marker-end="url(#seta)"/>
+  <text class="lbl" x="693" y="142">tocar cartão</text>
+
+  <line class="a" x1="670" y1="241" x2="716" y2="241" marker-start="url(#setar)" marker-end="url(#seta)"/>
+  <text class="lbl" x="693" y="230">menu ⋮</text>
+
+  <line class="a" x1="670" y1="329" x2="716" y2="329" marker-start="url(#setar)" marker-end="url(#seta)"/>
+  <text class="lbl" x="693" y="318">menu ⋮</text>
+
+  <!-- Coluna da direita -->
+  <rect class="n n2" x="720" y="40" width="170" height="50" rx="10"/>
+  <text class="t" x="805" y="63">Nova/Editar Tarefa</text>
+  <text class="st" x="805" y="79">FAB + · cartão</text>
+
+  <rect class="n n2" x="720" y="128" width="170" height="50" rx="10"/>
+  <text class="t" x="805" y="151">Detalhe da Tarefa</text>
+  <text class="st" x="805" y="167">checklist · mover</text>
+
+  <rect class="n n2" x="720" y="216" width="170" height="50" rx="10"/>
+  <text class="t" x="805" y="239">Membros</text>
+  <text class="st" x="805" y="255">convidar por email</text>
+
+  <rect class="n n2" x="720" y="304" width="170" height="50" rx="10"/>
+  <text class="t" x="805" y="327">Relatório</text>
+  <text class="st" x="805" y="343">progresso do projeto</text>
+</svg>
+</div>
+<div class="legenda-fluxo">
+  <span><b>Caixa escura:</b> ecrã principal</span>
+  <span><b>Caixa clara:</b> ecrã secundário (abre e fecha)</span>
+  <span><b>Seta simples:</b> navegação para a frente</span>
+  <span><b>Seta dupla:</b> abrir e voltar (com resultado)</span>
+</div>
+
+<h2>2 · Wireframes dos ecrãs</h2>
+
+<div class="grid">
+
+  <!-- LOGIN -->
+  <div class="item">
+    <div class="phone">
+      <div class="statusbar"><span>9:00</span><span>▲ ▮</span></div>
+      <div class="content">
+        <div class="logo">TF</div>
+        <div class="titulo">TaskFlow</div>
+        <div class="sub" style="text-align:center">Organiza o trabalho da equipa</div>
+        <div style="height:8px"></div>
+        <div class="field">Email</div>
+        <div class="field">Palavra-passe</div>
+        <div class="btn">ENTRAR</div>
+        <div class="link">Não tenho conta — Registar</div>
+      </div>
+    </div>
+    <div class="legenda"><b>LoginActivity</b><span>US02 · Must — validação e erro em credenciais erradas</span></div>
+  </div>
+
+  <!-- REGISTO -->
+  <div class="item">
+    <div class="phone">
+      <div class="statusbar"><span>9:00</span><span>▲ ▮</span></div>
+      <div class="appbar"><span class="back">←</span> Criar conta</div>
+      <div class="content">
+        <div class="field">Nome completo</div>
+        <div class="field">Email</div>
+        <div class="field">Palavra-passe</div>
+        <div class="field">Confirmar palavra-passe</div>
+        <div class="btn">REGISTAR</div>
+        <div class="sub" style="text-align:center">O email tem de ser único</div>
+      </div>
+    </div>
+    <div class="legenda"><b>RegistoActivity</b><span>US01 · Must — insere na tabela users</span></div>
+  </div>
+
+  <!-- PROJETOS -->
+  <div class="item">
+    <div class="phone">
+      <div class="statusbar"><span>9:00</span><span>▲ ▮</span></div>
+      <div class="appbar">Os meus projetos <span class="menu">⎋</span></div>
+      <div class="content">
+        <div class="card"><b>Projeto Final</b><span class="sub">3 membros · 10 tarefas</span><div class="barra"><i style="width:40%"></i></div></div>
+        <div class="card"><b>Website Escola</b><span class="sub">2 membros · 6 tarefas</span><div class="barra"><i style="width:70%"></i></div></div>
+        <div class="card"><b>Estágio</b><span class="sub">1 membro · 4 tarefas</span><div class="barra"><i style="width:25%"></i></div></div>
+        <div class="fab">+</div>
+      </div>
+    </div>
+    <div class="legenda"><b>ProjetosActivity</b><span>US04–05 · RecyclerView · FAB cria projeto (dialog)</span></div>
+  </div>
+
+  <!-- BOARD -->
+  <div class="item">
+    <div class="phone">
+      <div class="statusbar"><span>9:00</span><span>▲ ▮</span></div>
+      <div class="appbar"><span class="back">←</span> Projeto Final <span class="menu">⋮</span></div>
+      <div class="content">
+        <div class="cols">
+          <div class="col"><h5>A Fazer</h5>
+            <div class="mini laranja"><b>Base de dados</b><span class="sub">☐ 1/3</span></div>
+            <div class="mini laranja"><b>Ecrã login</b><span class="sub">☐ 0/2</span></div>
+          </div>
+          <div class="col"><h5>Em Curso</h5>
+            <div class="mini"><b>Board drag&amp;drop</b><span class="sub">☐ 2/4</span></div>
+          </div>
+          <div class="col"><h5>Concluído</h5>
+            <div class="mini verde"><b>Setup projeto</b><span class="sub">✓ 3/3</span></div>
+          </div>
+        </div>
+        <div class="fab">+</div>
+      </div>
+    </div>
+    <div class="legenda"><b>BoardActivity</b><span>US08 · menu ⋮ → Membros, Relatório · FAB → nova tarefa</span></div>
+  </div>
+
+  <!-- NOVA TAREFA -->
+  <div class="item">
+    <div class="phone">
+      <div class="statusbar"><span>9:00</span><span>▲ ▮</span></div>
+      <div class="appbar"><span class="back">←</span> Nova tarefa</div>
+      <div class="content">
+        <div class="field">Título *</div>
+        <div class="field" style="height:64px">Descrição</div>
+        <div class="field">Coluna: A Fazer ▾</div>
+        <div class="btn">GUARDAR</div>
+        <div class="sub" style="text-align:center">Título obrigatório</div>
+      </div>
+    </div>
+    <div class="legenda"><b>NovaTarefaActivity</b><span>US09, US11 · o mesmo ecrã serve para editar</span></div>
+  </div>
+
+  <!-- DETALHE TAREFA -->
+  <div class="item">
+    <div class="phone">
+      <div class="statusbar"><span>9:00</span><span>▲ ▮</span></div>
+      <div class="appbar"><span class="back">←</span> Tarefa <span class="menu">✎ 🗑</span></div>
+      <div class="content">
+        <div class="titulo" style="text-align:left">Base de dados</div>
+        <div class="sub">Criar tabelas e dados demo</div>
+        <div class="hbar">Coluna: <b>Em Curso</b> — arrasta o cartão no board ou usa:</div>
+        <div style="display:flex; gap:6px">
+          <div class="btn sec" style="flex:1">← A Fazer</div>
+          <div class="btn sec" style="flex:1">Concluído →</div>
+        </div>
+        <div class="sub">SUBTAREFAS (1/3)</div>
+        <div class="check"><span class="box ok"></span> Criar tabelas</div>
+        <div class="check"><span class="box"></span> Inserir dados demo</div>
+        <div class="check"><span class="box"></span> Testar queries</div>
+        <div class="field">+ nova subtarefa</div>
+      </div>
+    </div>
+    <div class="legenda"><b>DetalheTarefaActivity</b><span>US11–12 · checklist e mudança de coluna</span></div>
+  </div>
+
+  <!-- MEMBROS -->
+  <div class="item">
+    <div class="phone">
+      <div class="statusbar"><span>9:00</span><span>▲ ▮</span></div>
+      <div class="appbar"><span class="back">←</span> Membros</div>
+      <div class="content">
+        <div class="linha"><span class="avatar">BC</span><span><b>Bruno Castro</b><span class="sub">bruno@algarit.pt · gestor</span></span></div>
+        <div class="linha"><span class="avatar">DN</span><span><b>Diogo Neto</b><span class="sub">diogo@escola.pt</span></span></div>
+        <div class="linha"><span class="avatar">NS</span><span><b>Nelson Silva</b><span class="sub">nelson@escola.pt</span></span></div>
+        <div style="height:4px"></div>
+        <div class="field">Email do utilizador registado</div>
+        <div class="btn">ADICIONAR MEMBRO</div>
+      </div>
+    </div>
+    <div class="legenda"><b>MembrosActivity</b><span>US06–07 · Should — substitui o convite por email da versão web</span></div>
+  </div>
+
+  <!-- RELATÓRIO -->
+  <div class="item">
+    <div class="phone">
+      <div class="statusbar"><span>9:00</span><span>▲ ▮</span></div>
+      <div class="appbar"><span class="back">←</span> Relatório do projeto</div>
+      <div class="content">
+        <div style="display:flex; gap:6px">
+          <div class="stat"><b>10</b><span>tarefas</span></div>
+          <div class="stat"><b>40%</b><span>concluído</span></div>
+          <div class="stat"><b>6/12</b><span>subtarefas</span></div>
+        </div>
+        <div class="hbar">A Fazer <div class="barra"><i style="width:50%"></i></div> 5</div>
+        <div class="hbar">Em Curso <div class="barra"><i style="width:10%"></i></div> 1</div>
+        <div class="hbar">Concluído <div class="barra"><i style="width:40%"></i></div> 4</div>
+        <div class="sub" style="text-align:center">Atualiza a cada alteração no board</div>
+      </div>
+    </div>
+    <div class="legenda"><b>RelatorioActivity</b><span>US13 · Could — primeiro a cortar se o tempo apertar</span></div>
+  </div>
+
+</div>
+
+<h2>3 · Decisões de design</h2>
+<div class="nota">
+<ul style="margin:4px 0 0 18px">
+  <li><b>Estilo Material clássico</b> (App Bar + FAB + cartões) — o que a UC ensina. Os wireframes estão <b>em tons de cinzento</b>, sem cor, como é padrão em wireframes; a paleta final da app define-se na tarefa T02 (tema).</li>
+  <li><b>Board horizontal com 3 colunas fixas</b> — cabe num telemóvel vertical; mover cartões por drag &amp; drop com <i>ItemTouchHelper</i>, com botões de seta no detalhe como alternativa acessível.</li>
+  <li><b>Menu ⋮ do Board</b> concentra as ações secundárias (Membros, Relatório) para não sobrecarregar o ecrã.</li>
+  <li><b>Criar projeto</b> é um dialog em vez de Activity nova — ação curta (só o nome), menos navegação.</li>
+  <li><b>Perfil mínimo:</b> a v1 não tem ecrã de perfil/conta — o logout está na app bar de Projetos (⎋).</li>
+</ul>
+</div>
+
+</body>
+</html>
