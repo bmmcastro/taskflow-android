@@ -1,0 +1,74 @@
+[
+    {
+        "merged": "pt.algarit.taskflow.app-release-48:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "pt.algarit.taskflow.app-main-49:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "pt.algarit.taskflow.app-release-48:/layout_item_tarefa.xml.flat",
+        "source": "pt.algarit.taskflow.app-main-49:/layout/item_tarefa.xml"
+    },
+    {
+        "merged": "pt.algarit.taskflow.app-release-48:/layout_dialog_novo_projeto.xml.flat",
+        "source": "pt.algarit.taskflow.app-main-49:/layout/dialog_novo_projeto.xml"
+    },
+    {
+        "merged": "pt.algarit.taskflow.app-release-48:/layout_fragment_login.xml.flat",
+        "source": "pt.algarit.taskflow.app-main-49:/layout/fragment_login.xml"
+    },
+    {
+        "merged": "pt.algarit.taskflow.app-release-48:/layout_item_projeto.xml.flat",
+        "source": "pt.algarit.taskflow.app-main-49:/layout/item_projeto.xml"
+    },
+    {
+        "merged": "pt.algarit.taskflow.app-release-48:/xml_network_security_config.xml.flat",
+        "source": "pt.algarit.taskflow.app-main-49:/xml/network_security_config.xml"
+    },
+    {
+        "merged": "pt.algarit.taskflow.app-release-48:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "pt.algarit.taskflow.app-main-49:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "pt.algarit.taskflow.app-release-48:/layout_fragment_tarefa_detalhe.xml.flat",
+        "source": "pt.algarit.taskflow.app-main-49:/layout/fragment_tarefa_detalhe.xml"
+    },
+    {
+        "merged": "pt.algarit.taskflow.app-release-48:/layout_item_membro.xml.flat",
+        "source": "pt.algarit.taskflow.app-main-49:/layout/item_membro.xml"
+    },
+    {
+        "merged": "pt.algarit.taskflow.app-release-48:/layout_fragment_membros.xml.flat",
+        "source": "pt.algarit.taskflow.app-main-49:/layout/fragment_membros.xml"
+    },
+    {
+        "merged": "pt.algarit.taskflow.app-release-48:/layout_item_subtarefa.xml.flat",
+        "source": "pt.algarit.taskflow.app-main-49:/layout/item_subtarefa.xml"
+    },
+    {
+        "merged": "pt.algarit.taskflow.app-release-48:/layout_fragment_relatorio.xml.flat",
+        "source": "pt.algarit.taskflow.app-main-49:/layout/fragment_relatorio.xml"
+    },
+    {
+        "merged": "pt.algarit.taskflow.app-release-48:/layout_fragment_nova_tarefa.xml.flat",
+        "source": "pt.algarit.taskflow.app-main-49:/layout/fragment_nova_tarefa.xml"
+    },
+    {
+        "merged": "pt.algarit.taskflow.app-release-48:/layout_activity_main.xml.flat",
+        "source": "pt.algarit.taskflow.app-main-49:/layout/activity_main.xml"
+    },
+    {
+        "merged": "pt.algarit.taskflow.app-release-48:/layout_fragment_projetos.xml.flat",
+        "source": "pt.algarit.taskflow.app-main-49:/layout/fragment_projetos.xml"
+    },
+    {
+        "merged": "pt.algarit.taskflow.app-release-48:/navigation_nav_graph.xml.flat",
+        "source": "pt.algarit.taskflow.app-main-49:/navigation/nav_graph.xml"
+    },
+    {
+        "merged": "pt.algarit.taskflow.app-release-48:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "pt.algarit.taskflow.app-main-49:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "pt.algarit.taskflow.app-release-48:/layout_fragment_board.xml.flat",
+        "source": "pt.algarit.taskflow.app-main-49:/layout/fragment_board.xml"
+    }
+]

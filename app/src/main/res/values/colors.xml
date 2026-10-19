@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="azul_escuro">#1B2A4A</color>
+    <color name="azul_primario">#2563EB</color>
+    <color name="azul_escuro_bg">#0F172A</color>
+    <color name="fundo">#F4F6FB</color>
+    <color name="branco">#FFFFFF</color>
+    <color name="texto_principal">#1E293B</color>
+    <color name="texto_secundario">#64748B</color>
+    <color name="verde_ok">#2E7D32</color>
+    <color name="amarelo_curso">#F59E0B</color>
+    <color name="cinza_cartao">#E2E8F0</color>
+    <color name="vermelho_erro">#B91C1C</color>
+    <color name="ic_launcher_background">#1B2A4A</color>
+</resources>

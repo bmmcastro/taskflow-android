@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TaskFlow</string>
+
+    <!-- Login / registo -->
+    <string name="login_titulo">TaskFlow</string>
+    <string name="login_subtitulo">Organiza o trabalho da equipa</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Palavra-passe</string>
+    <string name="btn_entrar">Entrar</string>
+    <string name="link_registar">Não tenho conta — Registar</string>
+    <string name="link_login">Já tenho conta — Entrar</string>
+    <string name="conta_criada">Conta criada! Entra agora.</string>
+    <string name="hint_data_conclusao">Data limite (AAAA-MM-DD)</string>
+    <string name="erro_data_invalida">Data inválida</string>
+    <string name="registo_titulo">Criar conta</string>
+    <string name="hint_nome">Nome completo</string>
+    <string name="btn_registar">Registar</string>
+    <string name="erro_campos_vazios">Preenche todos os campos</string>
+    <string name="erro_email_invalido">Email inválido</string>
+
+    <!-- Projetos -->
+    <string name="projetos_titulo">Os meus projetos</string>
+    <string name="sem_projetos">Ainda não tens projetos.\nToca em + para criar um.</string>
+    <string name="btn_logout">Terminar sessão</string>
+    <string name="novo_projeto_titulo">Novo projeto</string>
+    <string name="hint_nome_projeto">Nome do projeto</string>
+    <string name="hint_descricao">Descrição (opcional)</string>
+    <string name="btn_criar">Criar</string>
+    <string name="btn_cancelar">Cancelar</string>
+    <string name="projeto_criado">Projeto criado</string>
+
+    <!-- Board / tarefas -->
+    <string name="board_sem_tarefas">Sem tarefas neste projeto</string>
+    <string name="filtro_pendentes">Só por fazer</string>
+    <string name="fab_nova_tarefa">Nova tarefa</string>
+    <string name="tarefa_titulo_ecra">Nova tarefa</string>
+    <string name="tarefa_titulo_ecra_editar">Editar tarefa</string>
+    <string name="hint_titulo_tarefa">Título *</string>
+    <string name="hint_descricao_tarefa">Descrição</string>
+    <string name="hint_responsavel">Responsável</string>
+    <string name="label_coluna">Coluna</string>
+    <string name="btn_guardar">Guardar</string>
+    <string name="tarefa_guardada">Tarefa guardada</string>
+    <string name="tarefa_eliminada">Tarefa eliminada</string>
+    <string name="confirmar_eliminar">Eliminar esta tarefa?</string>
+    <string name="btn_eliminar">Eliminar</string>
+    <string name="estado_mudou">Tarefa movida para %1$s</string>
+    <string name="subtarefas_titulo">Subtarefas</string>
+    <string name="hint_nova_subtarefa">Nova subtarefa</string>
+    <string name="btn_adicionar">Adicionar</string>
+    <string name="btn_mover_anterior">← Retroceder</string>
+    <string name="btn_mover_seguinte">Avançar →</string>
+
+    <!-- Membros -->
+    <string name="membros_titulo">Membros</string>
+    <string name="hint_email_membro">Email do utilizador registado</string>
+    <string name="membro_adicionado">Membro adicionado</string>
+    <string name="label_criador">gestor</string>
+
+    <!-- Relatório -->
+    <string name="relatorio_titulo">Relatório do projeto</string>
+    <string name="stat_total">Tarefas</string>
+    <string name="stat_concluidas">Concluídas</string>
+    <string name="stat_emcurso">Em curso</string>
+    <string name="stat_porfazer">Por fazer</string>
+    <string name="stat_atrasadas">Atrasadas</string>
+    <string name="stat_percentagem">Progresso</string>
+    <string name="por_pessoa_titulo">Tarefas por pessoa</string>
+
+    <!-- Erros -->
+    <string name="erro_rede">Sem ligação à internet</string>
+    <string name="erro_timeout">O servidor demorou a responder</string>
+    <string name="erro_servidor">Erro do servidor (%1$d)</string>
+    <string name="erro_login">Email ou palavra-passe incorretos</string>
+    <string name="erro_inesperado">Algo falhou. Tenta outra vez.</string>
+    <string name="email_ja_existe">Esse email já está registado</string>
+</resources>

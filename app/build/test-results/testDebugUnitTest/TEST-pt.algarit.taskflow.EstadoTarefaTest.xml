@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="pt.algarit.taskflow.EstadoTarefaTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-10-19T20:36:16.308Z" hostname="DESKTOP-K8Q9DAP" time="0.057">
+  <properties/>
+  <testcase name="ignora maiusculas e espacos a mais" classname="pt.algarit.taskflow.EstadoTarefaTest" time="0.032"/>
+  <testcase name="seguinte e anterior navegam pelas colunas" classname="pt.algarit.taskflow.EstadoTarefaTest" time="0.024"/>
+  <testcase name="estado desconhecido cai em por fazer" classname="pt.algarit.taskflow.EstadoTarefaTest" time="0.0"/>
+  <testcase name="mapeia os tres estados do servidor" classname="pt.algarit.taskflow.EstadoTarefaTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

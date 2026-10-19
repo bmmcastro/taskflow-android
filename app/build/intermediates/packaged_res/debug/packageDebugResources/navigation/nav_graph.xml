@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="pt.algarit.taskflow.ui.login.LoginFragment"
+        android:label="TaskFlow">
+        <action
+            android:id="@+id/action_login_to_projetos"
+            app:destination="@id/projetosFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/projetosFragment"
+        android:name="pt.algarit.taskflow.ui.projetos.ProjetosFragment"
+        android:label="Os meus projetos">
+        <action
+            android:id="@+id/action_projetos_to_login"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/projetosFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_projetos_to_board"
+            app:destination="@id/boardFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/boardFragment"
+        android:name="pt.algarit.taskflow.ui.board.BoardFragment"
+        android:label="Board">
+        <argument
+            android:name="projetoId"
+            app:argType="long" />
+        <argument
+            android:name="projetoNome"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_board_to_nova_tarefa"
+            app:destination="@id/novaTarefaFragment" />
+        <action
+            android:id="@+id/action_board_to_detalhe"
+            app:destination="@id/tarefaDetalheFragment" />
+        <action
+            android:id="@+id/action_board_to_membros"
+            app:destination="@id/membrosFragment" />
+        <action
+            android:id="@+id/action_board_to_relatorio"
+            app:destination="@id/relatorioFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/novaTarefaFragment"
+        android:name="pt.algarit.taskflow.ui.tarefa.NovaTarefaFragment"
+        android:label="Tarefa">
+        <argument
+            android:name="projetoId"
+            app:argType="long" />
+        <argument
+            android:name="tarefaId"
+            android:defaultValue="-1L"
+            app:argType="long" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/tarefaDetalheFragment"
+        android:name="pt.algarit.taskflow.ui.tarefa.TarefaDetalheFragment"
+        android:label="Detalhe">
+        <argument
+            android:name="tarefaId"
+            app:argType="long" />
+        <argument
+            android:name="projetoId"
+            app:argType="long" />
+        <argument
+            android:name="projetoNome"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_detalhe_to_editar"
+            app:destination="@id/novaTarefaFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/membrosFragment"
+        android:name="pt.algarit.taskflow.ui.membros.MembrosFragment"
+        android:label="Membros">
+        <argument
+            android:name="projetoId"
+            app:argType="long" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/relatorioFragment"
+        android:name="pt.algarit.taskflow.ui.relatorio.RelatorioFragment"
+        android:label="Relatório">
+        <argument
+            android:name="projetoId"
+            app:argType="long" />
+    </fragment>
+
+</navigation>
