@@ -178,6 +178,7 @@
         android:layout_margin="20dp"
         android:contentDescription="@string/fab_nova_tarefa"
         android:src="@android:drawable/ic_input_add"
+        app:backgroundTint="@color/azul_primario"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:tint="@color/branco" />
