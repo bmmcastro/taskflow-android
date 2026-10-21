@@ -19,6 +19,13 @@
     <string name="erro_campos_vazios">Preenche todos os campos</string>
     <string name="erro_email_invalido">Email inválido</string>
 
+    <!-- Atividade pratica: feedback -->
+    <string name="feedback_titulo">Enviar feedback</string>
+    <string name="hint_nome_feedback">O teu nome</string>
+    <string name="hint_mensagem_feedback">Mensagem</string>
+    <string name="btn_enviar">Enviar</string>
+    <string name="erro_mensagem">Escreve uma mensagem</string>
+
     <!-- Projetos -->
     <string name="projetos_titulo">Os meus projetos</string>
     <string name="sem_projetos">Ainda não tens projetos.\nToca em + para criar um.</string>

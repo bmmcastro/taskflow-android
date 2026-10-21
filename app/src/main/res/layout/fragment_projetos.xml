@@ -17,9 +17,21 @@
         android:textColor="@color/branco"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@id/btnLogout"
+        app:layout_constraintEnd_toStartOf="@id/btnFeedback"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnFeedback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/azul_escuro"
+        android:contentDescription="@string/feedback_titulo"
+        android:padding="14dp"
+        android:src="@android:drawable/ic_menu_send"
+        app:layout_constraintEnd_toStartOf="@id/btnLogout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/branco" />
 
     <ImageButton
         android:id="@+id/btnLogout"

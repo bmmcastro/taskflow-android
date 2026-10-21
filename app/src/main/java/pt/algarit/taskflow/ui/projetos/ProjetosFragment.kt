@@ -61,6 +61,11 @@ class ProjetosFragment : Fragment() {
                 .show()
         }
 
+        binding.btnFeedback.setOnClickListener {
+            // A FeedbackActivity devolve o resultado a MainActivity (atividade pratica)
+            (activity as? pt.algarit.taskflow.MainActivity)?.abrirFeedback()
+        }
+
         binding.fabNovo.setOnClickListener { mostrarDialogoNovoProjeto() }
 
         viewModel.estado.observe(viewLifecycleOwner) { estado ->
