@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- O gradiente de assinatura do website (135 graus, do indigo ao rosa). -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:angle="315"
+        android:startColor="#4F46E5"
+        android:centerColor="#9333EA"
+        android:endColor="#DB2777"
+        android:type="linear" />
+</shape>

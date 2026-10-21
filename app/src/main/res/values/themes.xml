@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Tema Material 3, sem action bar: cada ecra tem o proprio cabecalho -->
+    <!-- Tema com a marca do website: roxo primario, botoes pilula e fonte Poppins -->
     <style name="Theme.TaskFlow" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/azul_primario</item>
+        <item name="colorPrimary">@color/roxo_primario</item>
         <item name="colorOnPrimary">@color/branco</item>
-        <item name="colorPrimaryDark">@color/azul_escuro</item>
-        <item name="colorSecondary">@color/amarelo_curso</item>
+        <item name="colorPrimaryDark">@color/indigo</item>
+        <item name="colorSecondary">@color/rosa</item>
         <item name="android:colorBackground">@color/fundo</item>
-        <item name="android:statusBarColor">@color/azul_escuro_bg</item>
+        <item name="android:statusBarColor">@color/indigo</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="fontFamily">@font/poppins</item>
+        <item name="shapeAppearanceSmallComponent">@style/FormaPilula</item>
+    </style>
+
+    <!-- Botoes pilula, como os .btn do site (border-radius: 50rem) -->
+    <style name="FormaPilula" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
     </style>
 </resources>

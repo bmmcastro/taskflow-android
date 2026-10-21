@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="azul_escuro">#1B2A4A</color>
-    <color name="azul_primario">#2563EB</color>
-    <color name="azul_escuro_bg">#0F172A</color>
-    <color name="fundo">#F4F6FB</color>
+    <!-- Paleta do website TaskFlow (marcada no :root do index.html) -->
+    <color name="roxo_primario">#7C3AED</color>
+    <color name="indigo">#4F46E5</color>
+    <color name="roxo_meio">#9333EA</color>
+    <color name="rosa">#DB2777</color>
+    <color name="fundo">#F8F9FA</color>
     <color name="branco">#FFFFFF</color>
     <color name="texto_principal">#1E293B</color>
     <color name="texto_secundario">#64748B</color>
-    <color name="verde_ok">#2E7D32</color>
-    <color name="amarelo_curso">#F59E0B</color>
     <color name="cinza_cartao">#E2E8F0</color>
+    <color name="amarelo_curso">#FBBF24</color>
+    <color name="verde_ok">#2E7D32</color>
     <color name="vermelho_erro">#B91C1C</color>
-    <color name="ic_launcher_background">#1B2A4A</color>
+    <color name="ic_launcher_background">#4F46E5</color>
 </resources>

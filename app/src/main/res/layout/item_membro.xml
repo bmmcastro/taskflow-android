@@ -19,7 +19,7 @@
             android:id="@+id/txtAvatar"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:background="@color/azul_primario"
+            android:background="@color/roxo_primario"
             android:gravity="center"
             android:textColor="@color/branco"
             android:textSize="16sp"

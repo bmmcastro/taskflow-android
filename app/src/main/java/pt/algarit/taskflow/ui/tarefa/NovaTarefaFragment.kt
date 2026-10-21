@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
@@ -46,11 +48,19 @@ class NovaTarefaFragment : Fragment() {
         binding.txtTitulo.text =
             getString(if (emEdicao) R.string.tarefa_titulo_ecra_editar else R.string.tarefa_titulo_ecra)
 
-        // Dropdown com as tres colunas
-        binding.spColuna.setSimpleItems(rotulos)
-        binding.spColuna.setText(rotulos[0], false)
-        binding.spColuna.setOnItemClickListener { _, _, posicao, _ ->
-            estadoSelecionado = EstadoTarefa.entries[posicao]
+        // Spinner com as tres colunas
+        binding.spColuna.adapter = ArrayAdapter(
+            requireContext(),
+            android.R.layout.simple_spinner_dropdown_item,
+            rotulos
+        )
+        binding.spColuna.setSelection(0)
+        binding.spColuna.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, posicao: Int, id: Long) {
+                estadoSelecionado = EstadoTarefa.entries[posicao]
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) = Unit
         }
 
         // Campo de data: abre o seletor de datas
@@ -76,7 +86,7 @@ class NovaTarefaFragment : Fragment() {
             binding.edResponsavel.setText(tarefa.responsavel)
             binding.edData.setText(tarefa.dataConclusao?.take(10) ?: "")
             estadoSelecionado = EstadoTarefa.doStatus(tarefa.status)
-            binding.spColuna.setText(estadoSelecionado.rotulo, false)
+            binding.spColuna.setSelection(EstadoTarefa.entries.indexOf(estadoSelecionado))
         }
 
         if (emEdicao) viewModel.carregar(projetoId, tarefaId)
