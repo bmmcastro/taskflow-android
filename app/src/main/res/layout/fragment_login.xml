@@ -48,10 +48,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="@dimen/espaco_grande"
         android:layout_marginEnd="20dp"
         app:cardBackgroundColor="@color/branco"
-        app:cardCornerRadius="16dp"
+        app:cardCornerRadius="@dimen/raio_cartao"
         app:cardElevation="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -60,7 +60,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="20dp">
+            android:padding="@dimen/espaco_grande">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tiNome"
@@ -121,7 +121,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="18dp"
-                android:padding="12dp"
+                android:padding="@dimen/espaco_medio"
                 android:text="@string/btn_entrar"
                 android:background="@drawable/fundo_gradiente_pill"
                 app:backgroundTint="@null"

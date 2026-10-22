@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/fundo_gradiente"
         android:contentDescription="@string/btn_cancelar"
-        android:padding="14dp"
+        android:padding="@dimen/espaco_normal"
         android:src="@android:drawable/ic_menu_revert"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -24,7 +24,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/fundo_gradiente"
-        android:padding="16dp"
+        android:padding="@dimen/espaco_normal"
         android:text="@string/relatorio_titulo"
         android:textColor="@color/branco"
         android:textSize="18sp"
@@ -55,7 +55,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp">
+            android:padding="@dimen/espaco_normal">
 
             <LinearLayout
                 android:id="@+id/grelhaStats"

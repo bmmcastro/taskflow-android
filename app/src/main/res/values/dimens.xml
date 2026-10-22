@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Dimensoes partilhadas pelos layouts (o enunciado pede texto, cores e
+     dimensoes em recursos). -->
+<resources>
+    <!-- espacamentos -->
+    <dimen name="espaco_pequeno">8dp</dimen>
+    <dimen name="espaco_medio">12dp</dimen>
+    <dimen name="espaco_normal">16dp</dimen>
+    <dimen name="espaco_grande">24dp</dimen>
+    <dimen name="altura_botao">52dp</dimen>
+
+    <!-- texto -->
+    <dimen name="texto_titulo_ecra">20sp</dimen>
+    <dimen name="texto_titulo_barra">18sp</dimen>
+    <dimen name="texto_cartao">15sp</dimen>
+    <dimen name="texto_secundario">13sp</dimen>
+
+    <!-- componentes -->
+    <dimen name="raio_cartao">16dp</dimen>
+    <dimen name="risca_estado">5dp</dimen>
+    <dimen name="avatar_tamanho">40dp</dimen>
+</resources>

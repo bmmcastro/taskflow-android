@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/fundo"
     android:fitsSystemWindows="true"
-    android:padding="20dp">
+    android:padding="@dimen/espaco_grande">
 
     <TextView
         android:id="@+id/txtTituloFeedback"
@@ -25,7 +25,7 @@
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="@dimen/espaco_grande"
         android:hint="@string/hint_nome_feedback"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,7 +64,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:padding="12dp"
+        android:padding="@dimen/espaco_medio"
         android:text="@string/btn_enviar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
