@@ -1,10 +1,14 @@
 package pt.algarit.taskflow.ui.board
 
+import android.content.res.ColorStateList
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import pt.algarit.taskflow.R
+import pt.algarit.taskflow.data.model.EstadoTarefa
 import pt.algarit.taskflow.data.model.Tarefa
 import pt.algarit.taskflow.databinding.ItemTarefaBinding
 
@@ -25,6 +29,15 @@ class TarefasAdapter(
         val feitas = tarefa.concluidasSub?.toInt() ?: 0
         holder.binding.txtSubtarefas.text = if (total > 0) "☐ $feitas/$total" else ""
         holder.binding.txtResponsavel.text = tarefa.responsavel ?: ""
+
+        // risca de estado no lado esquerdo do cartao (como no site)
+        val corRisca = when (EstadoTarefa.doStatus(tarefa.status)) {
+            EstadoTarefa.POR_FAZER -> "#94A3B8"
+            EstadoTarefa.EM_CURSO -> "#F59E0B"
+            EstadoTarefa.CONCLUIDA -> "#22C55E"
+        }
+        holder.binding.risca.backgroundTintList =
+            ColorStateList.valueOf(android.graphics.Color.parseColor(corRisca))
         holder.binding.root.setOnClickListener { aoAbrir(tarefa) }
     }
 

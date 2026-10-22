@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import pt.algarit.taskflow.ui.feedback.FeedbackActivity
 
 /* Activity unica: todos os ecra sao Fragments dentro do NavHost.
@@ -31,6 +32,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        installSplashScreen()
         super.onCreate(savedInstanceState)
         Log.d("CICLO_PRINCIPAL", "onCreate")
         setContentView(R.layout.activity_main)

@@ -20,6 +20,7 @@ class ProjetosAdapter(
 
     override fun onBindViewHolder(holder: ProjetoViewHolder, position: Int) {
         val projeto = getItem(position)
+        holder.binding.txtInicial.text = projeto.nome.take(1).uppercase()
         holder.binding.txtNome.text = projeto.nome
         holder.binding.txtDescricao.text = projeto.descricao ?: ""
         holder.binding.root.setOnClickListener { aoAbrir(projeto) }

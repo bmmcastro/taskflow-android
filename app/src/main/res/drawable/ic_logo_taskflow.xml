@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- O logo do TaskFlow (public/logo.svg do website) portado para VectorDrawable -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+
+    <!-- rect arredondado com o gradiente tfGrad -->
+    <path android:pathData="M16,0 L48,0 A16,16 0 0 1 64,16 L64,48 A16,16 0 0 1 48,64 L16,64 A16,16 0 0 1 0,48 L0,16 A16,16 0 0 1 16,0 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:endX="64"
+                android:endY="64"
+                android:startX="0"
+                android:startY="0"
+                android:type="linear">
+                <item
+                    android:color="#FBBF24"
+                    android:offset="0" />
+                <item
+                    android:color="#DB2777"
+                    android:offset="0.55" />
+                <item
+                    android:color="#4F46E5"
+                    android:offset="1" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- sol do algarve -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M24,27 a8,8 0 1 0 16,0 a8,8 0 1 0 -16,0 Z" />
+
+    <!-- visto das tarefas dentro do sol -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M28.5,27 L31,29.5 L36,23.5"
+        android:strokeColor="#DB2777"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:strokeWidth="2.5" />
+
+    <!-- parentesis de codigo -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M18,20 L13,27 L18,34"
+        android:strokeColor="#FFFFFF"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:strokeWidth="2.5" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M46,20 L51,27 L46,34"
+        android:strokeColor="#FFFFFF"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:strokeWidth="2.5" />
+
+    <!-- ondas do mar -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M14,45 q4.5,-4 9,0 t9,0 t9,0 t9,0"
+        android:strokeAlpha="0.95"
+        android:strokeColor="#FFFFFF"
+        android:strokeLineCap="round"
+        android:strokeWidth="2.6" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M14,53 q4.5,-4 9,0 t9,0 t9,0 t9,0"
+        android:strokeAlpha="0.7"
+        android:strokeColor="#FFFFFF"
+        android:strokeLineCap="round"
+        android:strokeWidth="2.6" />
+</vector>

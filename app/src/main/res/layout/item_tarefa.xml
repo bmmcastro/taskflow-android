@@ -17,15 +17,25 @@
         android:layout_height="wrap_content"
         android:padding="10dp">
 
+        <View
+            android:id="@+id/risca"
+            android:layout_width="5dp"
+            android:layout_height="0dp"
+            android:background="@color/texto_secundario"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/txtTitulo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
             android:textColor="@color/texto_principal"
             android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@id/risca"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -36,7 +46,7 @@
             android:textColor="@color/texto_secundario"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@id/risca"
             app:layout_constraintTop_toBottomOf="@id/txtTitulo" />
 
         <TextView
@@ -49,7 +59,7 @@
             android:textColor="@color/texto_secundario"
             android:textSize="11sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@id/risca"
             app:layout_constraintTop_toBottomOf="@id/txtSubtarefas" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
