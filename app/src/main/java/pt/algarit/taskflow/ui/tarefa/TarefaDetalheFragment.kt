@@ -10,6 +10,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
@@ -24,8 +25,10 @@ class TarefaDetalheFragment : Fragment() {
     private val binding get() = _binding!!
     private val viewModel: TarefaDetalheViewModel by viewModels()
 
-    private val tarefaId: Long by lazy { requireArguments().getLong("tarefaId") }
-    private val projetoId: Long by lazy { requireArguments().getLong("projetoId") }
+    private val args: TarefaDetalheFragmentArgs by navArgs()
+
+    private val tarefaId: Long get() = args.tarefaId
+    private val projetoId: Long get() = args.projetoId
 
     private lateinit var adapterSubtarefas: SubtarefasAdapter
 

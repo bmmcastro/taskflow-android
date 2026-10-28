@@ -27,6 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/espaco_grande"
         android:hint="@string/hint_nome_feedback"
+                android:textColorHint="@color/texto_secundario"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txtTituloFeedback">
@@ -35,7 +36,8 @@
             android:id="@+id/edNomeFeedback"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textCapWords" />
+            android:inputType="textCapWords"
+                    android:textColor="@color/texto_principal" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -45,6 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:hint="@string/hint_mensagem_feedback"
+                android:textColorHint="@color/texto_secundario"
         app:counterEnabled="true"
         app:counterMaxLength="200"
         app:layout_constraintEnd_toEndOf="parent"

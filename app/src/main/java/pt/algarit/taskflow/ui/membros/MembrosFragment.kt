@@ -9,6 +9,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import pt.algarit.taskflow.R
@@ -22,7 +23,9 @@ class MembrosFragment : Fragment() {
     private val binding get() = _binding!!
     private val viewModel: MembrosViewModel by viewModels()
 
-    private val projetoId: Long by lazy { requireArguments().getLong("projetoId") }
+    private val args: MembrosFragmentArgs by navArgs()
+
+    private val projetoId: Long get() = args.projetoId
 
     private lateinit var adapter: MembrosAdapter
 

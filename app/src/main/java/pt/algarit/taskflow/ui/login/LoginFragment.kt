@@ -35,7 +35,7 @@ class LoginFragment : Fragment() {
 
         // Ja tem sessao? Vai direto para os projetos.
         if (SessionStore(requireContext()).temSessao) {
-            findNavController().navigate(R.id.action_login_to_projetos)
+            findNavController().navigate(LoginFragmentDirections.actionLoginToProjetos())
             return
         }
 
@@ -54,7 +54,7 @@ class LoginFragment : Fragment() {
                 it.utilizadorId = utilizador.id
                 it.utilizadorNome = utilizador.nome
             }
-            findNavController().navigate(R.id.action_login_to_projetos)
+            findNavController().navigate(LoginFragmentDirections.actionLoginToProjetos())
         }
         viewModel.aviso.observe(viewLifecycleOwner) { aviso ->
             Toast.makeText(requireContext(), aviso, Toast.LENGTH_LONG).show()

@@ -32,7 +32,7 @@
     <fragment
         android:id="@+id/boardFragment"
         android:name="pt.algarit.taskflow.ui.board.BoardFragment"
-        android:label="Board">
+        android:label="Quadro">
         <argument
             android:name="projetoId"
             app:argType="long" />
@@ -56,7 +56,7 @@
     <fragment
         android:id="@+id/novaTarefaFragment"
         android:name="pt.algarit.taskflow.ui.tarefa.NovaTarefaFragment"
-        android:label="Tarefa">
+        android:label="Nova tarefa">
         <argument
             android:name="projetoId"
             app:argType="long" />
@@ -69,16 +69,13 @@
     <fragment
         android:id="@+id/tarefaDetalheFragment"
         android:name="pt.algarit.taskflow.ui.tarefa.TarefaDetalheFragment"
-        android:label="Detalhe">
+        android:label="Detalhe da tarefa">
         <argument
             android:name="tarefaId"
             app:argType="long" />
         <argument
             android:name="projetoId"
             app:argType="long" />
-        <argument
-            android:name="projetoNome"
-            app:argType="string" />
         <action
             android:id="@+id/action_detalhe_to_editar"
             app:destination="@id/novaTarefaFragment" />

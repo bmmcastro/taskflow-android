@@ -6,13 +6,20 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupWithNavController
+import pt.algarit.taskflow.databinding.ActivityMainBinding
 import pt.algarit.taskflow.ui.feedback.FeedbackActivity
 
 /* Activity unica: todos os ecra sao Fragments dentro do NavHost.
    Tambem recebe o resultado da FeedbackActivity (atividade pratica). */
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
 
     /* Recebe o feedback enviado pela FeedbackActivity */
     private val feedbackLauncher = registerForActivityResult(
@@ -35,7 +42,14 @@ class MainActivity : AppCompatActivity() {
         installSplashScreen()
         super.onCreate(savedInstanceState)
         Log.d("CICLO_PRINCIPAL", "onCreate")
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        // Toolbar ligada ao NavController: titulo por destino + seta de voltar
+        val navHost = supportFragmentManager.findFragmentById(R.id.nav_host) as NavHostFragment
+        val navController = navHost.navController
+        val appBarConfiguration = AppBarConfiguration.Builder(R.id.loginFragment).build()
+        binding.toolbar.setupWithNavController(navController, appBarConfiguration)
     }
 
     override fun onStart() { super.onStart(); Log.d("CICLO_PRINCIPAL", "onStart") }

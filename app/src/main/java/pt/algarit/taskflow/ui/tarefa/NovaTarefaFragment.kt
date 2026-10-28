@@ -12,6 +12,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import pt.algarit.taskflow.R
 import pt.algarit.taskflow.data.SessionStore
 import pt.algarit.taskflow.data.model.EstadoTarefa
@@ -27,8 +28,10 @@ class NovaTarefaFragment : Fragment() {
     private val binding get() = _binding!!
     private val viewModel: NovaTarefaViewModel by viewModels()
 
-    private val projetoId: Long by lazy { requireArguments().getLong("projetoId") }
-    private val tarefaId: Long by lazy { requireArguments().getLong("tarefaId", -1L) }
+    private val args: NovaTarefaFragmentArgs by navArgs()
+
+    private val projetoId: Long get() = args.projetoId
+    private val tarefaId: Long get() = args.tarefaId
 
     private var estadoSelecionado: EstadoTarefa = EstadoTarefa.POR_FAZER
 

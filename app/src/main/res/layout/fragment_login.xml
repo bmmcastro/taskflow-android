@@ -68,6 +68,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_nome"
+                android:textColorHint="@color/texto_secundario"
                 android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -77,7 +78,8 @@
                     android:id="@+id/edNome"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    android:textColor="@color/texto_principal" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -86,6 +88,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_email"
+                android:textColorHint="@color/texto_secundario"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tiNome">
@@ -94,7 +97,8 @@
                     android:id="@+id/edEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress" />
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/texto_principal" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -104,6 +108,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:hint="@string/hint_password"
+                android:textColorHint="@color/texto_secundario"
                 app:endIconMode="password_toggle"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -113,7 +118,8 @@
                     android:id="@+id/edPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPassword" />
+                    android:inputType="textPassword"
+                    android:textColor="@color/texto_principal" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.button.MaterialButton

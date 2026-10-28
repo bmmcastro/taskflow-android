@@ -7,6 +7,7 @@
         <item name="colorPrimaryDark">@color/indigo</item>
         <item name="colorSecondary">@color/rosa</item>
         <item name="android:colorBackground">@color/fundo</item>
+        <item name="colorOnSurface">@color/texto_principal</item>
         <item name="android:statusBarColor">@color/indigo</item>
         <item name="android:fontFamily">@font/poppins</item>
         <item name="fontFamily">@font/poppins</item>

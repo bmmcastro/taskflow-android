@@ -1,17 +1,21 @@
 package pt.algarit.taskflow.ui.board
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.os.bundleOf
+import android.content.res.ColorStateList
+import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import pt.algarit.taskflow.R
+import pt.algarit.taskflow.data.model.EstadoTarefa
 import pt.algarit.taskflow.data.model.Tarefa
 import pt.algarit.taskflow.data.model.UiState
 import pt.algarit.taskflow.databinding.FragmentBoardBinding
@@ -20,13 +24,10 @@ class BoardFragment : Fragment() {
 
     private var _binding: FragmentBoardBinding? = null
     private val binding get() = _binding!!
+    private val args: BoardFragmentArgs by navArgs()
     private val viewModel: BoardViewModel by viewModels()
 
-    private val projetoId: Long by lazy { requireArguments().getLong("projetoId") }
-    private val projetoNome: String by lazy { requireArguments().getString("projetoNome") ?: "" }
-
     private var tarefasAtuais: List<Tarefa> = emptyList()
-
     private lateinit var adapterPorFazer: TarefasAdapter
     private lateinit var adapterEmCurso: TarefasAdapter
     private lateinit var adapterConcluidas: TarefasAdapter
@@ -40,7 +41,7 @@ class BoardFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.txtTitulo.text = projetoNome
+        binding.txtTitulo.text = args.projetoNome
 
         adapterPorFazer = TarefasAdapter { tarefa -> abrirDetalhe(tarefa) }
         adapterEmCurso = TarefasAdapter { tarefa -> abrirDetalhe(tarefa) }
@@ -56,18 +57,20 @@ class BoardFragment : Fragment() {
         binding.btnVoltar.setOnClickListener { findNavController().navigateUp() }
         binding.btnMembros.setOnClickListener {
             findNavController().navigate(
-                R.id.action_board_to_membros, bundleOf("projetoId" to projetoId)
+                BoardFragmentDirections.actionBoardToMembros(args.projetoId)
             )
         }
         binding.btnRelatorio.setOnClickListener {
             findNavController().navigate(
-                R.id.action_board_to_relatorio, bundleOf("projetoId" to projetoId)
+                BoardFragmentDirections.actionBoardToRelatorio(args.projetoId)
             )
         }
         binding.fabNovaTarefa.setOnClickListener {
             findNavController().navigate(
-                R.id.action_board_to_nova_tarefa,
-                bundleOf("projetoId" to projetoId, "tarefaId" to -1L)
+                BoardFragmentDirections.actionBoardToNovaTarefa(
+                    projetoId = args.projetoId,
+                    tarefaId = -1L
+                )
             )
         }
         binding.swFiltro.setOnCheckedChangeListener { _, _ -> distribuir(tarefasAtuais) }
@@ -98,11 +101,9 @@ class BoardFragment : Fragment() {
 
     private fun abrirDetalhe(tarefa: Tarefa) {
         findNavController().navigate(
-            R.id.action_board_to_detalhe,
-            bundleOf(
-                "tarefaId" to tarefa.id,
-                "projetoId" to projetoId,
-                "projetoNome" to projetoNome
+            BoardFragmentDirections.actionBoardToDetalhe(
+                tarefaId = tarefa.id,
+                projetoId = args.projetoId
             )
         )
     }
@@ -131,7 +132,7 @@ class BoardFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        viewModel.carregar(projetoId)
+        viewModel.carregar(args.projetoId)
     }
 
     override fun onDestroyView() {

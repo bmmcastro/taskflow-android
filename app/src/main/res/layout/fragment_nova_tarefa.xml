@@ -52,6 +52,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_titulo_tarefa"
+                android:textColorHint="@color/texto_secundario"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">

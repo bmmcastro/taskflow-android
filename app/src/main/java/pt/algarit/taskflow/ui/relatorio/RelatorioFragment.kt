@@ -11,6 +11,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import pt.algarit.taskflow.R
 import pt.algarit.taskflow.data.model.UiState
 import pt.algarit.taskflow.databinding.FragmentRelatorioBinding
@@ -21,7 +22,9 @@ class RelatorioFragment : Fragment() {
     private val binding get() = _binding!!
     private val viewModel: RelatorioViewModel by viewModels()
 
-    private val projetoId: Long by lazy { requireArguments().getLong("projetoId") }
+    private val args: RelatorioFragmentArgs by navArgs()
+
+    private val projetoId: Long get() = args.projetoId
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?

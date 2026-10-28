@@ -40,14 +40,16 @@ class ProjetosFragment : Fragment() {
 
         // Sem sessao? De volta ao login.
         if (!sessao.temSessao) {
-            findNavController().navigate(R.id.action_projetos_to_login)
+            findNavController().navigate(ProjetosFragmentDirections.actionProjetosToLogin())
             return
         }
 
         adapter = ProjetosAdapter { projeto ->
             findNavController().navigate(
-                R.id.action_projetos_to_board,
-                bundleOf("projetoId" to projeto.id, "projetoNome" to projeto.nome)
+                ProjetosFragmentDirections.actionProjetosToBoard(
+                    projetoId = projeto.id,
+                    projetoNome = projeto.nome
+                )
             )
         }
         binding.rvProjetos.layoutManager = LinearLayoutManager(requireContext())
